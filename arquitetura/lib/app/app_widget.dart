@@ -1,4 +1,4 @@
-import 'package:arquitetura/app/controllers/app_controller.dart';
+import 'package:arquitetura/app/app_controller.dart';
 import 'package:arquitetura/app/pages/home/home_page.dart';
 import 'package:flutter/material.dart';
 
@@ -8,12 +8,11 @@ class AppWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return ValueListenableBuilder<bool>(        
       valueListenable: AppController.instance.themeSwitch,
-      builder: (BuildContext context, isDark, Widget? child) {  
-        MaterialApp(
+      builder: (BuildContext context, isDark, Widget? child){  
+        return MaterialApp(
         title: 'Flutter Demo',
-        theme: ThemeData(     
-          colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
-          primaryColor: Colors.blue,
+        theme: ThemeData(
+          primarySwatch: Colors.blue,     
           visualDensity: VisualDensity.adaptivePlatformDensity,
           brightness: isDark ? Brightness.dark : Brightness.light,
         ),
